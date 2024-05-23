@@ -1,0 +1,661 @@
+@import "_variables";
+
+// if you have downloaded fonts
+// @font-face {
+//     font-family: 'abc';
+//     src: url("../fonts/abc.otf");
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
+// Mixins
+@mixin too-small-mobile {
+  @media (min-width: $too-small-mobile) {
+    @content;
+  }
+}
+@mixin mid-small-mobile {
+  @media (min-width: $mid-small-mobile) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (min-width: $small-mobile) {
+    @content;
+  }
+}
+
+@mixin mid-mobile {
+  @media (min-width: $mid-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin small-tab {
+  @media (min-width: $small-tab) {
+    @content;
+  }
+}
+
+@mixin big-tab {
+  @media (min-width: $big-tab) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (min-width: $small-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin mid-desktop {
+  @media (min-width: $mid-desktop) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: $large-desktop) {
+    @content;
+  }
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background($url, $position, $attachment) {
+  @if (str-index($url, "../") != 1) {
+    @error "Background image URL must start with '../'";
+  }
+
+  background-image: url($url);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: $attachment;
+}
+
+* {
+  // font-family: 'abc';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+// Keyframes
+// Add keyframes here
+
+// Global
+// Add global/common classes here
+
+// Main classes
+
+
+    nav {
+      height: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+     .logo{
+      margin: 0;
+      height: 55px;
+     }
+    
+    .logo img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .slogan{
+      height: 55px;
+    }
+    .slogan img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .hash{
+      height: 25px;
+    }
+    .hash img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .tag{
+      height: 25px;
+    }
+    .tag img{
+       object-fit: cover;
+      width: 100%;
+      height: 100%; 
+    }
+    figure.poster img{
+      width: 100%;
+      border-radius: 13px;
+      object-fit: cover;
+    }
+    .footer-link a{
+      color:white;
+      font-size: 11px;
+      text-decoration: none;
+    }
+      footer{
+        background-color:#0622A7;
+        padding: 8px;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+      }
+      h1{
+        text-align: center;
+        color: #0622A7;
+        font-weight: 700;
+        letter-spacing: -2px;
+        padding-bottom: 25px;
+        
+      }
+      .gallery-image{
+        margin: 0;
+      }
+      .gallery-image img{
+        width: 100%;
+      //  height: 100%;
+        object-fit: cover;
+        border-radius: 9px;
+      }
+     
+    .name{
+      position:relative;
+    }
+    .poster{
+      margin: 0;
+    }
+    .finalist{
+      color: white;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      margin-top: 6%;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+    .sponsor-image{
+      margin: 0;
+      height: 60px;
+    }
+    .sponsor-image img{
+      object-fit: cover;
+     // width: 100%;
+      height: 100%;
+    }
+    .splide__arrow {
+      display: none;
+    }
+.splide__pagination{
+  bottom: -0.1em;
+}
+.splide__pagination__page{
+  background-color: #4f64c2;
+}
+.squad-image img{
+  object-fit: cover;
+ width: 100%;
+  border-radius: 13px;
+
+}
+.splide__pagination__page{
+  display: none;
+}
+.squad{
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(6,34,167);
+    background: linear-gradient(180deg, #0621a71b 35%, #01061d 100%);
+  }
+}
+.squad-info{
+  position: absolute;
+ bottom: 0;
+ padding: 7px 20px;
+ 
+}
+.squad-name{
+  font-size: 16px;
+  color: #E59F17;
+ font-weight: 800;
+ letter-spacing: -1px;
+}
+.squad-post{
+  font-size: 13px;
+  color: #FFF;
+  font-weight: 600;
+}
+.rate{
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  background-color: white;
+  padding: 2px;
+  border-radius: 4%;
+
+}
+ h6.rupees{
+  color: black;
+  margin-bottom: 0;
+  padding: 2px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+ .symbol{
+ // height: 23px;
+ display: flex;
+ padding: 2px;
+  object-fit: cover;
+  width: 100%;
+  background-color: #E59F17;
+  border-radius: 50%;
+}
+.symbol svg{
+  width: 100%;
+ object-fit: cover;
+}
+.owner-img img{
+width: 100%;
+object-fit: cover;
+}
+.owner{
+  position: relative; 
+}
+.owner-info{
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+ 
+}
+.owner-name{
+  color: #E59F17;
+ font-weight: 800;
+ font-size: 24px;
+
+}
+.post{
+  color: #FFF;
+ font-size: 18px;
+}
+.table-responsive{
+  border-radius: 15px;
+  border: 1px solid #A9B1BB;
+  border-collapse: collapse;
+  
+}
+table th{
+  color: #051F96;
+  background-color: white;
+  font-weight: 700;
+  padding: 8px;
+}
+table{
+  width: 100%;
+  object-fit: cover;
+
+}
+tr, td,table{
+  padding: 5px;
+}
+
+tr{
+  border: 1px solid #A9B1BB;
+  border-collapse: collapse;
+  
+}
+th, td{
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #051F96;
+  color: white;
+}
+tr:nth-child(odd){
+  background-color: #061971;
+  color: white;
+}
+ td.d-flex{
+ background-color: #FFF;
+}
+
+.d-flex p{
+  color: #051F96;
+  font-weight: 700;
+  padding-left: 5px;
+}
+.team-logo img{
+  width: 100%;
+  object-fit: cover;
+  height: 42px;
+}
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.highlights{
+  margin: 0;
+}
+.highlights img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.btn{
+//  width: 100%;
+  object-fit: cover;
+  background-color: #0622A7;
+  color: #FFF;
+}
+.btn:hover{
+  background-color: #0622A7;
+  color: #FFF;
+}
+.news1{
+  position: relative;
+  margin-bottom: 10px;
+}
+.news-info {
+  position: absolute;
+  bottom: 10px;
+  padding-left:7px;
+  //padding-right: 3px;
+}
+
+.news-info h6{
+  font-size: 11px;
+  color: #FFF;
+}
+.news-info p{
+  font-size: 13px;
+  color: #FFF;
+  padding-left: 0px;
+}
+
+#section-color{
+  background-color: #051F96;
+  width: 100%;
+  object-fit: cover;
+}
+.heading-color{
+  color: #E59F17;
+}
+.card{
+  background-color: #FFF;
+  padding: 17px;
+  height: 100%;
+}
+.teamlogo-1{
+  margin: 0;
+}
+.teamlogo-1 img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  
+}
+.teamlogo-1{
+ // width: 50%;
+ width: fit-content;
+ padding: 20px;
+ 
+// margin-bottom: 0;
+}
+.match-1 h3{
+  font-size: 12px;
+  font-weight: 800;
+  color: #01061d;
+  //margin-bottom: auto;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.match-date h2{
+  color: #051F96;
+  font-weight: 800;
+  font-size: 22px;
+  //margin-bottom: auto;
+  text-align: center;
+}
+.match-time h2{
+  color: #051F96;
+  font-weight: 800;
+  font-size: 22px;
+}
+.match-1 span{
+  text-align: center;
+}
+.divide{
+  color: #051F96;
+  font-weight: 600;
+}
+p.stadium-name{
+  color: #01061d;
+  font-size: 14px;
+  margin: auto;
+}
+button.btn.btn-1{
+  object-fit: cover;
+  display: flex;
+  margin: auto;
+
+}
+.newsletter{
+  margin-bottom: 0;
+  position: relative;
+}
+.newsletter-img img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.newsletter-info{
+  position: absolute;
+  bottom: 25px;
+  //right:50%;
+ left: 55%;
+}
+.newsletter-info h1{
+  color: #0522A6;
+  font-weight: 700;
+  letter-spacing: -2px;
+  padding-bottom: 0px;
+}
+
+.social-media-img{
+  object-fit: cover;
+//  width: 100%;
+  height: 100%;
+ margin-right: 8px;
+}
+.social-media-img svg{
+  border-radius: 50%;
+}
+.recent-news-img{
+  //width: 100%;
+  height: 100%;
+}
+.recent-news-img img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.news-img img{
+  object-fit: cover;
+ width: 100%;
+ height: 100%;
+}
+.content p{
+  color: #FFF;
+}
+.btn3{
+  background-color: #FFF;
+  color: #0522A6;
+  display: flex;
+  margin: auto;
+  font-weight: 600;
+  
+}
+@media (max-width: 1024px){
+  .news-info h6{
+    font-size: 10px;
+  }
+  .news-info p{
+    font-size: 12px;
+  }
+  .newsletter-info{
+    bottom: 3px;
+  }
+}
+@media (max-width: 768px){
+  .owner-name{
+    font-size: 16px;
+  }
+  .post{
+    font-size: 14px;
+  }
+  .owner-info{
+    bottom: 16px;
+  }
+  .news-info{
+    bottom: 20px;
+  }
+  .news-info h6{
+    font-size: 13px;
+  }
+  .news-info p{
+    font-size: 15px;
+  }
+  .news1{
+    padding: 8px;
+  }
+ .btn{
+  margin: auto;
+  display: flex;
+ }
+ .newsletter-info{
+  bottom: 0px;
+  }
+  .newsletter-info h2{
+    font-size: 20px;
+  }
+  .social-media-img{
+    //width: 100%;
+    margin-right: 2px;
+  }
+  .d-flex p{
+    font-size: 14px;
+  }
+}
+
+ @media (max-width: 576px){
+ 
+h1{
+    font-size:20px ;
+    letter-spacing: -1px;
+  }
+
+.finalist{
+  font-size: 18px;
+  letter-spacing: -1px;
+}
+
+.squad-name{
+  font-size: 12px;
+}
+.squad-post{
+  font-size: 11px;
+}
+
+h6.rupees{
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.owner-info{
+  bottom: 5px;
+}
+.owner-name{
+  font-size: 9px;
+}
+.post{
+  font-size: 8px;
+}
+.news-info{
+  bottom: 10px;
+}
+
+.news-info h6{
+  font-size: 7px;
+}
+.news-info p{
+  font-size: 8px;
+}
+td.d-flex{
+  min-width: 315px;
+}
+.d-flex p{
+  font-size: 12px;
+}
+.newsletter-info{
+  bottom: -12px;
+ 
+}
+.newsletter-info h1{
+  font-size: 11px;
+  margin-bottom: 0;
+  letter-spacing: 0px;
+  padding-bottom: 0px;
+}
+.social-media-img{
+  margin-right: -4px;
+}
+.social-media-img svg{
+  height: 10px;
+  border-radius: 100%;
+}
+  }
+ 
+ 
+  
